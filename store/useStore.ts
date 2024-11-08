@@ -25,9 +25,9 @@ interface storeProps {
 const useStore = create<storeProps>((set) => ({
     loading: false,
 
-    token: localStorage.getItem('token') || "",
+    token: typeof window !== 'undefined' ? localStorage.getItem('token') || "" : "",
 
-    email: localStorage.getItem('email') || "",
+    email: typeof window !== 'undefined' ? localStorage.getItem('email') || "" : "",
 
     login: async (username, password) => {
         const response = await service.post("/security/createToken", {
@@ -35,14 +35,18 @@ const useStore = create<storeProps>((set) => ({
             password: password,
         });
         set({token: response.data, email: username});
-        localStorage.setItem('token', response.data);
-        localStorage.setItem('email', username);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('token', response.data);
+            localStorage.setItem('email', username);
+        }
     },
 
     logout: async () => {
         set({token: "", email: ""});
-        localStorage.setItem('token', "");
-        localStorage.setItem('email', "");
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('token', "");
+            localStorage.setItem('email', "");
+        }
     },
 
     forecasts: [],
