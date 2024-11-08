@@ -40,21 +40,11 @@ This project follows a structured approach to ensure code maintainability, scala
 ### /hooks
 This folder contains custom React hooks used throughout the application.
 
-- **use-toast.ts**: Custom hook for displaying toast notifications.
-- **use-mobile.tsx**: Custom hook for handling mobile-specific functionality.
-
 ### /components
 This folder is divided into two subfolders: `custom` and `ui`.
 
 #### /custom
 Contains reusable custom components.
-
-- **container.tsx**: General container component.
-- **date-column.tsx**: Component for displaying date columns in tables.
-- **datatable-pagination.tsx**: Component for handling pagination in data tables.
-- **header.tsx**: Header component.
-- **number-column.tsx**: Component for displaying number columns in tables.
-- **percent-column.tsx**: Component for displaying percentage columns in tables.
 
 #### /ui
 Contains shadcnui components, such as buttons, modals, etc.
@@ -70,9 +60,6 @@ Contains other pages of the application, structured by feature. Pages that requi
 
 ### /lib
 Contains utility functions and configurations.
-
-- **http.ts**: Axios instances for making HTTP requests.
-- **utils.ts**: General utility functions.
 
 ### /store
 Contains Zustand store configurations for state management.
