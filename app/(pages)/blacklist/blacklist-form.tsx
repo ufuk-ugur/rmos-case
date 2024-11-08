@@ -18,8 +18,8 @@ import {useState} from "react";
 const schema = yup.object().shape({
     Adi: yup.string().required("Adı alanı zorunlu"),
     Soy: yup.string().required("Soyadı alanı zorunlu"),
-    Kimlik_no: yup.string().default(""),
-    Tcno: yup.string().default(""),
+    Kimlik_no: yup.string().nullable(),
+    Tcno: yup.string().nullable(),
     Aciklama: yup.string().required("Açıklama alanı zorunlu"),
 });
 
@@ -118,7 +118,7 @@ const BlacklistForm: React.FC<BlacklistFormProps> = ({data, children}) => {
                                 <FormItem>
                                     <FormLabel>Kimlik No</FormLabel>
                                     <FormControl>
-                                        <Input {...field} />
+                                        <Input {...field} value={field.value || ""} />
                                     </FormControl>
                                     <FormMessage/>
                                 </FormItem>
@@ -131,7 +131,7 @@ const BlacklistForm: React.FC<BlacklistFormProps> = ({data, children}) => {
                                 <FormItem>
                                     <FormLabel>TC No</FormLabel>
                                     <FormControl>
-                                        <Input {...field} />
+                                        <Input {...field} value={field.value || ""} />
                                     </FormControl>
                                     <FormMessage/>
                                 </FormItem>
