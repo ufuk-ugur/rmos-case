@@ -24,7 +24,6 @@ import {
     useReactTable,
     VisibilityState
 } from "@tanstack/react-table";
-import {Dialog, DialogContent, DialogTrigger,} from "@/components/ui/dialog";
 import {DateColumn} from "@/components/custom/date-column";
 import {BlacklistValueItem} from "@/types/response.interface";
 import {DataTablePagination} from "@/components/custom/datatable-pagination";
@@ -82,8 +81,6 @@ const BlacklistTable: React.FC<BlacklistTableProps> = ({data}) => {
     const [sorting, setSorting] = useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
     const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-    const [createDialog, setCreateDialog] = useState<boolean>(false);
-    const [updateDialog, setUpdateDialog] = useState<boolean>(false);
 
     const table = useReactTable({
         data,
