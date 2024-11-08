@@ -16,24 +16,13 @@ import {
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import {Avatar, AvatarFallback} from "@/components/ui/avatar";
-import {
-    BadgeCheck,
-    Ban,
-    Bell,
-    ChartArea,
-    ChevronsUpDown,
-    CreditCard,
-    LogOut,
-    LucideProps,
-    Sparkles
-} from "lucide-react";
+import {Ban, ChartArea, ChevronsUpDown, LogOut, LucideProps} from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
 import {useEffect, useState} from "react";
@@ -135,28 +124,6 @@ const MainLayout: React.FC<Readonly<MainLayoutProps>> = ({children}) => {
                                             </div>
                                         </div>
                                     </DropdownMenuLabel>
-                                    <DropdownMenuSeparator/>
-                                    <DropdownMenuGroup>
-                                        <DropdownMenuItem>
-                                            <Sparkles/>
-                                            Upgrade to Pro
-                                        </DropdownMenuItem>
-                                    </DropdownMenuGroup>
-                                    <DropdownMenuSeparator/>
-                                    <DropdownMenuGroup>
-                                        <DropdownMenuItem>
-                                            <BadgeCheck/>
-                                            Account
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            <CreditCard/>
-                                            Billing
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            <Bell/>
-                                            Notifications
-                                        </DropdownMenuItem>
-                                    </DropdownMenuGroup>
                                     <DropdownMenuSeparator/>
                                     <DropdownMenuItem onClick={handleLogout}>
                                         <LogOut/>
