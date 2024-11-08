@@ -156,6 +156,7 @@ const BlacklistTable: React.FC<BlacklistTableProps> = ({data}) => {
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
                                 <BlacklistForm
+                                    key={row.id}
                                     data={row.original as PostBlacklistFormProps}
                                 >
                                     <TableRow>
