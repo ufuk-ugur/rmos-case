@@ -8,7 +8,7 @@ import {
     ChartTooltipContent
 } from "@/components/ui/chart";
 import {Bar, BarChart, CartesianGrid, XAxis} from "recharts";
-import {StpRmforKlasikValueItem} from "@/types/response.interface";
+import {ForecastValueItem} from "@/types/response.interface";
 
 const chartConfig = {
     last: {
@@ -22,7 +22,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 interface ForecastChartProps {
-    data: StpRmforKlasikValueItem[];
+    data: ForecastValueItem[];
 }
 
 const ForecastChart: React.FC<ForecastChartProps> = ({data}) => {
