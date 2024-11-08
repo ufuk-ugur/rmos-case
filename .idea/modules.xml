@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/rmos-case.iml" filepath="$PROJECT_DIR$/.idea/rmos-case.iml" />
+    </modules>
+  </component>
+</project>
