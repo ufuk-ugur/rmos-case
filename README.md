@@ -1,9 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install the necessary packages:
 
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Secondly, you must copy the `.env.example` file and rename it to `.env.local`,
+
+```bash
+cp .env.example .env.local
+```
+
+Thirt, run the development server:
 ```bash
 npm run dev
 # or
@@ -16,21 +31,60 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Project Structure and Rationale
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project follows a structured approach to ensure code maintainability, scalability, and ease of navigation. Below is a detailed explanation of each folder and its purpose.
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+### /hooks
+This folder contains custom React hooks used throughout the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **use-toast.ts**: Custom hook for displaying toast notifications.
+- **use-mobile.tsx**: Custom hook for handling mobile-specific functionality.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### /components
+This folder is divided into two subfolders: `custom` and `ui`.
 
-## Deploy on Vercel
+#### /custom
+Contains reusable custom components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **container.tsx**: General container component.
+- **date-column.tsx**: Component for displaying date columns in tables.
+- **datatable-pagination.tsx**: Component for handling pagination in data tables.
+- **header.tsx**: Header component.
+- **number-column.tsx**: Component for displaying number columns in tables.
+- **percent-column.tsx**: Component for displaying percentage columns in tables.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### /ui
+Contains shadcnui components, such as buttons, modals, etc.
+
+### /app
+This folder contains the main application structure, including pages and global styles.
+
+#### /login
+Contains the login page.
+
+#### /(pages)
+Contains other pages of the application, structured by feature. Pages that require authentication should be under this folder.
+
+### /lib
+Contains utility functions and configurations.
+
+- **http.ts**: Axios instances for making HTTP requests.
+- **utils.ts**: General utility functions.
+
+### /store
+Contains Zustand store configurations for state management.
+
+### /types
+Contains TypeScript interface and type definitions.
+
+## Rationale
+1. **Separation of Concerns**: By dividing the project into clearly defined folders, we ensure that each part of the codebase has a single responsibility, making it easier to manage and understand.
+2. **Reusability**: Custom hooks and components are placed in their respective folders to promote reusability across the application.
+3. **Scalability**: The folder structure is designed to scale as the project grows. New features can be added with minimal changes to the existing structure.
+4. **Maintainability**: A well-organized codebase is easier to maintain, debug, and extend. By following a consistent structure, developers can quickly locate and modify the code.
+
+By following these principles, we aim to create a robust and maintainable application.
+
